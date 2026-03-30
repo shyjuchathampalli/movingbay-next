@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MovingBay | Pet Moving & Transport",
+  title: "MovingBay | Pet Relocation & Pet Transport Services",
   description:
-    "Safe, reliable pet relocation services across India and internationally.",
+    "Safe and reliable pet relocation services in Bangalore and across India. International pet travel experts.",
 
   keywords: [
-    "pet relocation India",
-    "pet transport",
-    "international pet moving",
-    "pet shipping India",
+    "pet relocation Bangalore",
+    "pet transport India",
+    "pet travel international",
+    "dog transport Bangalore"
   ],
 
   metadataBase: new URL("https://movingbay.com"),

@@ -2,71 +2,159 @@
 
 import { useState } from "react";
 
-const countries = ["India", "USA", "UK", "UAE", "Australia"];
+const countries = [
+  "India",
+  "United States (USA)",
+  "Canada",
+  "United Kingdom (UK)",
+  "Germany",
+  "France",
+  "Netherlands",
+  "Italy",
+  "Spain",
+  "Ireland",
+  "Switzerland",
+  "United Arab Emirates (UAE)",
+  "Saudi Arabia",
+  "Qatar",
+  "Kuwait",
+  "Oman",
+  "Bahrain",
+  "Singapore",
+  "Malaysia",
+  "Thailand",
+  "Indonesia",
+  "Vietnam",
+  "Australia",
+  "New Zealand",
+  "South Africa",
+];
 
 export default function QuoteForm() {
-  const [movingDate, setMovingDate] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    fromCountry: "",
+    fromCity: "",
+    toCountry: "",
+    toCity: "",
+    date: "",
+  });
+
+  const handleChange = (e: any) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const res = await fetch("/api/send-quote", {
+      method: "POST",
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Quote submitted successfully!");
+    } else {
+      alert("Something went wrong");
+    }
+  };
 
   return (
-    <form className="space-y-4">
-      
-      {/* Input */}
+    <form onSubmit={handleSubmit} className="space-y-4">
+
+      {/* NAME */}
       <input
-        type="text"
+        name="name"
         placeholder="Full Name"
-        className="w-full bg-white/20 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        onChange={handleChange}
+        required
+        className="w-full bg-white/10 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
       />
 
+      {/* EMAIL */}
       <input
+        name="email"
         type="email"
         placeholder="Email Address"
-        className="w-full bg-white/20 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        onChange={handleChange}
+        required
+        className="w-full bg-white/10 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
       />
 
+      {/* PHONE */}
       <input
-        type="tel"
+        name="phone"
         placeholder="Phone Number"
-        className="w-full bg-white/20 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        onChange={handleChange}
+        required
+        className="w-full bg-white/10 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
       />
 
       {/* FROM */}
       <div className="grid grid-cols-2 gap-3">
-        <select className="bg-white/20 border border-white/30 text-white p-3 rounded-lg">
-          <option className="text-black">Moving From</option>
+        <select
+          name="fromCountry"
+          onChange={handleChange}
+          required
+          className="bg-white/10 border border-white/30 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
+        >
+          <option value="" className="text-black">
+            Moving From
+          </option>
           {countries.map((c) => (
-            <option key={c} className="text-black">{c}</option>
+            <option key={c} value={c} className="text-black">
+              {c}
+            </option>
           ))}
         </select>
 
         <input
-          type="text"
+          name="fromCity"
           placeholder="City"
-          className="bg-white/20 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          required
+          className="bg-white/10 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
         />
       </div>
 
       {/* TO */}
       <div className="grid grid-cols-2 gap-3">
-        <select className="bg-white/20 border border-white/30 text-white p-3 rounded-lg">
-          <option className="text-black">Moving To</option>
+        <select
+          name="toCountry"
+          onChange={handleChange}
+          required
+          className="bg-white/10 border border-white/30 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
+        >
+          <option value="" className="text-black">
+            Moving To
+          </option>
           {countries.map((c) => (
-            <option key={c} className="text-black">{c}</option>
+            <option key={c} value={c} className="text-black">
+              {c}
+            </option>
           ))}
         </select>
 
         <input
-          type="text"
+          name="toCity"
           placeholder="City"
-          className="bg-white/20 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg"
+          onChange={handleChange}
+          required
+          className="bg-white/10 border border-white/30 text-white placeholder-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
         />
       </div>
 
       {/* DATE */}
       <input
+        name="date"
         type="date"
-        value={movingDate}
-        onChange={(e) => setMovingDate(e.target.value)}
-        className="w-full bg-white/20 border border-white/30 text-white p-3 rounded-lg"
+        onChange={handleChange}
+        required
+        className="w-full bg-white/10 border border-white/30 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 backdrop-blur"
       />
 
       {/* BUTTON */}
