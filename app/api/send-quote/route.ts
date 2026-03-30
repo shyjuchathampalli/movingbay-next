@@ -4,27 +4,70 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("Missing RESEND_API_KEY");
+    }
+
     const data = await req.json();
 
-    const { name, email, phone, from, to, date } = data;
+    const {
+      name,
+      email,
+      phone,
+      fromCountry,
+      fromCity,
+      toCountry,
+      toCity,
+      date,
+    } = data;
+
+    // Basic validation
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !fromCountry ||
+      !fromCity ||
+      !toCountry ||
+      !toCity ||
+      !date
+    ) {
+      return Response.json(
+        { success: false, message: "Missing required fields" },
+        { status: 400 }
+      );
+    }
 
     await resend.emails.send({
       from: "MovingBay <onboarding@resend.dev>",
-      to: ["your@email.com"], // 🔴 YOUR EMAIL HERE
+      to: ["your@email.com"], // ✅ CHANGE THIS
       subject: "New Quote Request 🚀",
       html: `
-        <h2>New Lead from Website</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>From:</strong> ${from}</p>
-        <p><strong>To:</strong> ${to}</p>
-        <p><strong>Date:</strong> ${date}</p>
+        <div style="font-family: Arial, sans-serif; padding: 20px;">
+          <h2 style="color:#16a34a;">New Pet Relocation Lead</h2>
+
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+
+          <hr />
+
+          <p><strong>Moving From:</strong> ${fromCity}, ${fromCountry}</p>
+          <p><strong>Moving To:</strong> ${toCity}, ${toCountry}</p>
+          <p><strong>Moving Date:</strong> ${date}</p>
+
+          <hr />
+
+          <p style="font-size:12px;color:#666;">
+            Submitted from MovingBay website
+          </p>
+        </div>
       `,
     });
 
     return Response.json({ success: true });
   } catch (error) {
-    return Response.json({ success: false });
+    console.error(error);
+    return Response.json({ success: false }, { status: 500 });
   }
 }
