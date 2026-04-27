@@ -57,7 +57,7 @@ export default function QuoteForm() {
     const data = await res.json();
 
     if (data.success) {
-      alert("Quote submitted successfully!");
+      alert("Thank You! Your Request for Quote submitted successfully!");
     } else {
       alert("Something went wrong");
     }
