@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "MovingBay <onboarding@resend.dev>",
-      to: ["info@movingbay.com,shyjuchathampalli@gmail.com"], // ✅ CHANGE THIS
+      to: ["info@movingbay.com"], // ✅ CHANGE THIS
       subject: "New Quote Request 🚀",
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px;">
