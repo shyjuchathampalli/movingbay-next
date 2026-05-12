@@ -42,6 +42,12 @@ export default function Navbar() {
           </li>
 
           <li>
+            <Link href="/relocation-services" className="hover:text-green-600 transition">
+              Relocation Services
+            </Link>
+          </li>
+
+          <li>
             <Link href="/become-a-partner" className="hover:text-green-600 transition">
               Become a Partner
             </Link>
@@ -51,7 +57,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="/request-quote"
+          href="https://wa.me/918618173141?text=Hi%20MovingBay,%20I%20need%20assistance%20with%20relocation%20services."
           target="_blank"
           className="bg-green-600 hover:bg-green-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow transition"
         >
