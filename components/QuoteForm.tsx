@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const countries = [
   "India",
@@ -42,6 +43,8 @@ export default function QuoteForm() {
     date: "",
   });
 
+  const router = useRouter();
+
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -57,7 +60,7 @@ export default function QuoteForm() {
     const data = await res.json();
 
     if (data.success) {
-      alert("Thank You! Your Request for Quote submitted successfully!");
+      router.push("/thank-you");
     } else {
       alert("Something went wrong");
     }
