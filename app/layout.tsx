@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "MovingBay | Pet Relocation & Pet Transport Services",
@@ -68,6 +69,24 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18110655244"
+      />
+
+      <Script id="google-ads-tag">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-18110655244');
+        `}
+      </Script>
+
+      </head>
       <body className="bg-white text-gray-900 antialiased">
         
         {/* ✅ Structured Data (SEO Boost) */}
