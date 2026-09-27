@@ -20,6 +20,8 @@ const navItems = [
   { label: "Resources", href: "#insights" },
 ];
 
+
+
 export default function GlobalMobilityNavbar() {
   const [open, setOpen] = useState(false);
 

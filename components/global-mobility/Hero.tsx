@@ -31,12 +31,13 @@ const heroCapabilities = [
 export default function Hero() {
   return (
     <section className={styles.hero}>
-
+      {/* Background */}
       <div className={styles.heroBackground} />
-
       <div className={styles.heroOverlay} />
 
+      {/* Main content container */}
       <div className={styles.container}>
+
         <div className={styles.heroContent}>
 
           <div className={styles.eyebrow}>
@@ -44,8 +45,8 @@ export default function Hero() {
           </div>
 
           <h1 className={styles.heroTitle}>
-            Wherever People Move,
-            <span> We Help Them Arrive.</span>
+            Moving Lives with
+            <span> Love and Care.</span>
           </h1>
 
           <p className={styles.heroDescription}>
@@ -57,25 +58,29 @@ export default function Hero() {
           </p>
 
           <div className={styles.heroButtons}>
+
             <Link
-              href="#contact"
+              href="/relocation-guidance"
               className={styles.primaryButton}
             >
-              Talk to a Mobility Expert
+              <span>Connect to a Mobility Expert</span>
               <ArrowRight size={17} />
             </Link>
 
             <Link
-              href="#services"
+              href="/solutions"
               className={styles.secondaryButton}
             >
               Explore Our Services
             </Link>
+
           </div>
 
         </div>
 
+        {/* Capability navigation */}
         <div className={styles.heroCapabilityBar}>
+
           {heroCapabilities.map((item) => {
             const Icon = item.icon;
 
@@ -85,14 +90,16 @@ export default function Hero() {
                 className={styles.heroCapability}
               >
                 <div className={styles.capabilityIcon}>
-                  <Icon size={18} />
+                  <Icon size={18} strokeWidth={1.8} />
                 </div>
 
                 <span>{item.title}</span>
               </div>
             );
           })}
+
         </div>
+
       </div>
     </section>
   );

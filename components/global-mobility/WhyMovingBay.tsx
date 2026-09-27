@@ -79,7 +79,7 @@ export default function WhyMovingBay() {
 
                 <h3>{item.title}</h3>
 
-                <p>{item.text}</p>
+                <p style={{ fontSize: '14px' }}>{item.text}</p>
               </div>
             );
           })}

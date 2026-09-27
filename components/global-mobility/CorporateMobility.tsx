@@ -67,7 +67,7 @@ export default function CorporateMobility() {
             </div>
 
             <Link
-              href="#contact"
+              href="/relocation-planning"
               className={styles.primaryButton}
             >
               Talk to Our Corporate Mobility Team

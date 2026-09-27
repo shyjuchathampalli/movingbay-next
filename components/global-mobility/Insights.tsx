@@ -71,13 +71,6 @@ export default function Insights() {
             </p>
           </div>
 
-          <Link
-            href="#"
-            className={styles.outlineButton}
-          >
-            Explore Resources
-            <ArrowUpRight size={16} />
-          </Link>
 
         </div>
 

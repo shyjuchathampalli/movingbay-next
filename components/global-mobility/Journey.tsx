@@ -74,7 +74,7 @@ export default function Journey() {
           </div>
 
           <Link
-            href="#contact"
+            href="/relocation-planning"
             className={styles.outlineButton}
           >
             Plan Your Move
@@ -104,7 +104,7 @@ export default function Journey() {
 
                 <h3>{item.title}</h3>
 
-                <p>{item.text}</p>
+                <p style={{ fontSize: '14px' }}>{item.text}</p>
 
               </div>
             );

@@ -85,8 +85,8 @@ export default function PetRelocation() {
                     <Icon size={19} />
 
                     <div>
-                      <strong>{item.title}</strong>
-                      <span>{item.text}</span>
+                      <strong style={{ fontSize: '16px' }}>{item.title}</strong>
+                      <span style={{ fontSize: '14px' }}>{item.text}</span>
                     </div>
                   </div>
                 );
@@ -94,7 +94,7 @@ export default function PetRelocation() {
             </div>
 
             <Link
-              href="#contact"
+              href="/pet-moving"
               className={styles.primaryButton}
             >
               Explore Pet Relocation

@@ -54,10 +54,10 @@ export default function Intro() {
             </p>
 
             <Link
-              href="#services"
+              href="/relocation-planning"
               className={styles.textButton}
             >
-              Discover MovingBay
+              Plan Your Relocation
               <ArrowRight size={16} />
             </Link>
 
@@ -67,19 +67,19 @@ export default function Intro() {
 
             <div className={styles.stat}>
               <Building2 />
-              <strong>500+</strong>
+              <strong>2000+</strong>
               <span>Relocations & Pet Moves</span>
             </div>
 
             <div className={styles.stat}>
               <MapPin />
-              <strong>20+</strong>
-              <span>Cities Covered</span>
+              <strong>60+</strong>
+              <span>Countries Covered</span>
             </div>
 
             <div className={styles.stat}>
               <PawPrint />
-              <strong>5+</strong>
+              <strong>25+</strong>
               <span>Years Experience</span>
             </div>
 

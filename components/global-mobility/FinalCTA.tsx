@@ -47,10 +47,10 @@ export default function FinalCTA() {
             </Link>
 
             <Link
-              href="mailto:info@movingbay.com"
+              href="/relocation-planning"
               className={styles.transparentButton}
             >
-              Request a Relocation Assessment
+              Start Your Relocation Assessment
             </Link>
 
           </div>

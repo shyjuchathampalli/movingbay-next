@@ -6,19 +6,19 @@ const testimonials = [
   {
     quote:
       "MovingBay made our relocation experience smooth, professional and structured. Their attention to detail made the difference.",
-    name: "HR / Mobility Director",
+    name: "Mary Johnson, HR / Mobility Director",
     company: "Global Technology Company",
   },
   {
     quote:
       "From the planning stage through arrival, the team helped us understand what needed to happen next.",
-    name: "Relocating Employee",
+    name: "Narayan Subramanian, Relocating Employee",
     company: "International Assignment",
   },
   {
     quote:
       "Our pet's journey was carefully coordinated and we always knew what was happening.",
-    name: "Pet Parent",
+    name: "Sarah, Pet Parent",
     company: "International Relocation",
   },
 ];

@@ -82,7 +82,7 @@ export default function FamilyRelocation() {
                     <Icon size={19} />
                     <div>
                       <strong>{item.title}</strong>
-                      <span>{item.text}</span>
+                      <span style={{ fontSize: '14px' }}>{item.text}</span>
                     </div>
                   </div>
                 );
@@ -90,7 +90,7 @@ export default function FamilyRelocation() {
             </div>
 
             <Link
-              href="#contact"
+              href="/relocation-planning"
               className={styles.textButton}
             >
               Start Planning Your Relocation

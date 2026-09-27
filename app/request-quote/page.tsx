@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
-import Image from "next/image";
 
 export const metadata = {
   title: "Request a Pet Relocation Quote | MovingBay India",
@@ -14,81 +13,291 @@ export default function RequestQuotePage() {
     <>
       <Navbar />
 
+      {/* =========================================================
+          HERO / QUOTE SECTION
+      ========================================================= */}
+
       {/* HERO SECTION */}
-      <section className="px-6 md:px-20 py-20 bg-gradient-to-br from-blue-900 via-slate-800 to-blue-950 text-white">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+<section className="bg-[#091a28] px-6 py-16 text-white md:px-12 md:py-20">
+  <div className="mx-auto grid max-w-6xl items-start gap-12 md:grid-cols-2 md:gap-16">
 
-          {/* LEFT CONTENT */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Get a Free Quote for{" "}
-              <span className="text-green-400">
-                Pet Relocation Services
-              </span>
-            </h1>
+    {/* LEFT CONTENT */}
+    <div className="pt-1">
 
-            <p className="text-gray-300 mb-4 text-lg leading-relaxed">
-              Planning to relocate your pet within India or abroad? MovingBay
-              provides safe, reliable and stress-free pet transport services
-              tailored to your needs.
-            </p>
+      {/* EYEBROW */}
+      <div
+        className="
+          inline-flex
+          rounded-full
+          border border-[#285768]
+          bg-[#103f4a]
+          px-4
+          py-2
+          text-xs
+          font-bold
+          uppercase
+          tracking-[0.18em]
+          text-[#57c7ce]
+        "
+      >
+        Request a Quote
+      </div>
 
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Our experts handle everything — from consultation and documentation
-              to travel coordination and delivery. Get a personalized quote today
-              and ensure a smooth journey for your pet.
-            </p>
+      {/* TITLE */}
+      <h1
+        className="
+          mt-7
+          max-w-[650px]
+          font-[family-name:var(--font-exo-2)]
+          text-4xl
+          font-bold
+          leading-[1.05]
+          tracking-tight
+          text-[#edf5f8]
+          md:text-5xl
+          lg:text-[58px]
+        "
+      >
+        Get a Free Quote
+        <br />
+        for{" "}
+        <span className="text-[#57c7ce]">
+          Pet Relocation
+        </span>
+        <br />
+        <span className="text-[#57c7ce]">
+          Services
+        </span>
+      </h1>
 
-            {/* BULLETS */}
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li>✔ Domestic & International Pet Relocation</li>
-              <li>✔ IATA Approved Travel Crates</li>
-              <li>✔ Documentation & Compliance Support</li>
-              <li>✔ Door-to-Door Pickup & Delivery</li>
-            </ul>
-          </div>
+      {/* INTRO */}
+      <p
+        className="
+          mt-8
+          max-w-xl
+          text-base
+          leading-7
+          text-[#91b3cf]
+          md:text-lg
+        "
+      >
+        Planning to relocate your pet within India or abroad?
+        MovingBay provides safe, reliable and stress-free pet
+        transport services tailored to your needs.
+      </p>
 
-          {/* RIGHT FORM */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-8 rounded-2xl shadow-2xl">
-            <h2 className="text-xl font-semibold mb-4 text-white text-center">
-              Request Your Quote
+      <p
+        className="
+          mt-5
+          max-w-xl
+          text-sm
+          leading-7
+          text-[#7195ae]
+          md:text-base
+        "
+      >
+        Our experts handle everything — from consultation and
+        documentation to travel coordination and delivery.
+        Get a personalized quote today and ensure a smooth
+        journey for your pet.
+      </p>
+
+      {/* BENEFITS */}
+      <ul className="mt-8 space-y-4">
+
+        <li className="flex items-center gap-3 text-sm text-[#c2d4df]">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#103f4a] text-xs text-[#57c7ce]">
+            ✓
+          </span>
+          Domestic & International Pet Relocation
+        </li>
+
+        <li className="flex items-center gap-3 text-sm text-[#c2d4df]">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#103f4a] text-xs text-[#57c7ce]">
+            ✓
+          </span>
+          IATA Approved Travel Crates
+        </li>
+
+        <li className="flex items-center gap-3 text-sm text-[#c2d4df]">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#103f4a] text-xs text-[#57c7ce]">
+            ✓
+          </span>
+          Documentation & Compliance Support
+        </li>
+
+        <li className="flex items-center gap-3 text-sm text-[#c2d4df]">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#103f4a] text-xs text-[#57c7ce]">
+            ✓
+          </span>
+          Door-to-Door Pickup & Delivery
+        </li>
+
+      </ul>
+    </div>
+
+    {/* RIGHT FORM */}
+    <div
+      className="
+        rounded-3xl
+        border border-[#213b4e]
+        bg-[#102a3d]
+        p-6
+        shadow-[0_25px_70px_rgba(0,0,0,0.22)]
+        md:p-8
+      "
+    >
+
+      <div className="mb-7">
+
+        <p
+          className="
+            mb-2
+            text-xs
+            font-bold
+            uppercase
+            tracking-[0.18em]
+            text-[#8fc63f]
+          "
+        >
+          MovingBay
+        </p>
+
+        <h2
+          className="
+            font-[family-name:var(--font-exo-2)]
+            text-2xl
+            font-bold
+            tracking-tight
+            text-[#edf5f8]
+            md:text-3xl
+          "
+        >
+          Request Your Quote
+        </h2>
+
+        <p className="mt-2 text-sm leading-6 text-[#91b3cf]">
+          Tell us about your pet and relocation requirements.
+        </p>
+
+      </div>
+
+      <QuoteForm />
+
+    </div>
+
+  </div>
+</section>
+
+
+      {/* =========================================================
+          TRUST / SEO SECTION
+      ========================================================= */}
+
+      <section className="bg-[#0d2233] px-6 py-20 text-white md:px-12 md:py-24">
+
+        <div className="mx-auto max-w-6xl">
+
+          {/* SECTION HEADER */}
+          <div className="max-w-3xl">
+
+            <span
+              className="
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.16em]
+                text-[#8fc63f]
+              "
+            >
+              Why MovingBay
+            </span>
+
+            <h2
+              className="
+                mt-4
+                font-[family-name:var(--font-exo-2)]
+                text-3xl
+                font-bold
+                leading-tight
+                text-[#edf5f8]
+                md:text-4xl
+              "
+            >
+              Trusted Pet Relocation Experts in India
             </h2>
 
-            <QuoteForm />
           </div>
+
+
+          {/* CONTENT */}
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+
+            <div
+              className="
+                rounded-2xl
+                border
+                border-[#213b4e]
+                bg-[#102538]
+                p-6
+              "
+            >
+              <p className="leading-7 text-[#91b3cf]">
+                MovingBay is a Bangalore-based pet relocation company offering
+                professional pet transport services across India and worldwide.
+                Whether you are moving within the city, relocating across states or
+                planning international pet travel, we ensure your pet’s journey is
+                safe and comfortable.
+              </p>
+            </div>
+
+
+            <div
+              className="
+                rounded-2xl
+                border
+                border-[#213b4e]
+                bg-[#102538]
+                p-6
+              "
+            >
+              <p className="leading-7 text-[#91b3cf]">
+                Our team specializes in handling documentation, airline approvals,
+                crate training and safe transit arrangements. We work with trusted
+                partners and follow strict safety standards to ensure stress-free
+                travel for your pets.
+              </p>
+            </div>
+
+
+            <div
+              className="
+                rounded-2xl
+                border
+                border-[#213b4e]
+                bg-[#102538]
+                p-6
+              "
+            >
+              <p className="leading-7 text-[#91b3cf]">
+                Get in touch with us today and receive a customized pet relocation
+                quote based on your requirements.
+              </p>
+            </div>
+
+          </div>
+
         </div>
+
       </section>
 
-      {/* TRUST / SEO SECTION */}
-      <section className="px-6 md:px-20 py-16 bg-white">
-        <div className="max-w-5xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Trusted Pet Relocation Experts in India
-          </h2>
 
-          <p className="text-gray-700 mb-4 leading-relaxed">
-            MovingBay is a Bangalore-based pet relocation company offering
-            professional pet transport services across India and worldwide.
-            Whether you are moving within the city, relocating across states or
-            planning international pet travel, we ensure your pet’s journey is
-            safe and comfortable.
-          </p>
-
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            Our team specializes in handling documentation, airline approvals,
-            crate training and safe transit arrangements. We work with trusted
-            partners and follow strict safety standards to ensure stress-free
-            travel for your pets.
-          </p>
-
-          <p className="text-gray-600 leading-relaxed">
-            Get in touch with us today and receive a customized pet relocation
-            quote based on your requirements.
-          </p>
-        </div>
-      </section>
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
 
       <Footer />
     </>
   );
 }
+
