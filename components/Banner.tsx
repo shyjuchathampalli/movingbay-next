@@ -40,8 +40,8 @@ export default function Banner() {
           />
 
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Moving Pets with{" "}
-          <span className="text-green-400">Care, Comfort & Confidence</span>
+          Moving Lives, with{" "}
+          <span className="text-green-400">Love &amp; Care</span>
         </h1>
 
         <h2 className="text-lg md:text-xl text-gray-300 mt-4">
